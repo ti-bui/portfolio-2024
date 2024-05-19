@@ -40,8 +40,8 @@ const Interface = (props) => {
             <div className="flex flex-col items-center w-screen max-w-2xl">
             <GreetingSection Section={Section}/>
             <AboutSection setSection={setSection} Section={Section}/>
-            <SkillsSection  Section={Section}/>
             <ProjectsSection Section={Section}/>
+            <SkillsSection  Section={Section}/>
             <ContactSection Section={Section}/>
             </div>
 

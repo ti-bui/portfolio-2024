@@ -39,8 +39,8 @@ const Menu = (props) => {
           <div className="flex-1 flex items-end justify-center flex-col gap-6 p-8">
               <MenuButton  label="Home" onClick={()=> {onSectionChange(0), setMenuOpened(false)}}/>
               <MenuButton  label="About Me" onClick={()=> {onSectionChange(1), setMenuOpened(false)}}/>
-              <MenuButton  label="Tech Stack" onClick={()=> {onSectionChange(2), setMenuOpened(false)}}/>
               <MenuButton  label="Projects" onClick={()=> {onSectionChange(3), setMenuOpened(false)}}/>
+              <MenuButton  label="Tech Stack" onClick={()=> {onSectionChange(2), setMenuOpened(false)}}/>
               <MenuButton  label="Contact" onClick={()=> {onSectionChange(4), setMenuOpened(false)}}/>
           </div>
         

@@ -24,7 +24,7 @@ export const Experience = (props) => {
 
   },[section])
 
-  useFrame((state) => {
+  useFrame(() => {
    const curSection = Math.floor(data.scroll.current * data.pages);
 
    if(curSection !== section){
@@ -101,9 +101,6 @@ export const Experience = (props) => {
         </Float>
 
     </motion.group>
-
-      {/* <Projects/> */}
-    
     </>
   );
 };

@@ -2,19 +2,24 @@ import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
 import {ScrollControls, Scroll} from "@react-three/drei"
 import Interface from "./components/Interface";
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import ScrollManager from "./components/ScrollManager";
 import { Leva } from "leva";
 import { MotionConfig } from "framer-motion";
 import Menu from "./components/Menu";
-import { LoadingScreen } from "./components/LoadingScreen";
+import ReactGA from 'react-ga4';
 
-
+const TRACKING_ID = import.meta.env.VITE_GA_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
   const [section, setSection] = useState(0)
   const [menuOpened, setMenuOpened] = useState(false)
   const [start, setStart]= useState(true)
+
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+  }, []);
 
   return (
     
@@ -59,7 +64,6 @@ function App() {
            
     </MotionConfig> 
     <Leva hidden/>
-      <LoadingScreen started={start} onStarted={() => setStart(true)}/>
     </>
 
   );

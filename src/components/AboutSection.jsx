@@ -51,17 +51,6 @@ export const AboutSection = (props) => {
             className="text-2xl md:text-4xl font-bold text-[#f1ff97]">an ENGINEER with a 
             <br/>
             background in PHOTOGRAPHY</motion.h3>
-            <div className="flex gap-10 box-shadow">
-            <h3 className="text-[#FFFFF0] text-xl font-bold">
-                🇻🇳 
-            Vietnamese</h3> 
-            <h3 className="text-[#FFFFF0] text-xl font-bold">
-            🇨🇦
-            English</h3> 
-            <h3 className="text-[#FFFFF0] text-xl font-bold">
-            🇨🇦
-            French</h3> 
-            </div>
             <motion.div 
                     initial={{
                         opacity:0,
