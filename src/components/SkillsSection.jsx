@@ -15,6 +15,7 @@ import Gsap from '../assets/icons/gsap.svg'
 import FramerMotion from '../assets/icons/framer-motion.svg'
 import Blender from '../assets/icons/blender.svg'
 import Figma from '../assets/icons/figma.svg'
+import {motion} from 'framer-motion'
 import { useState } from 'react'
 
 export const SkillsSection = (props) => {
@@ -44,29 +45,85 @@ export const SkillsSection = (props) => {
 
     
     return (
-    <Section >
-    <article className='flex flex-col w-full gap-12 md:w-[60%] h-full mt-24 justify-center'>
+    <Section>
+    <motion.article
+     initial={{
+        opacity:0,
+        y: 50,
+    }}
+    whileInView={{
+        opacity: 1,
+        y: 0,
+        transition:{
+            duration: 0.7,
+            delay: 0.6
+        }
+    }}
+    className='flex flex-col w-full lg:w-[80%] gap-12 h-full mt-24 justify-center'>
         <div className='flex flex-col h-[20%]'>
-            <h2 className="text-6xl md:text-8xl mb-8 md:mb-2 font-bold text-[#FFFFF0]">Tech Stack</h2>
-            <div className="flex flex-row w-full gap-6 mb-10">
+            <motion.h2 
+                initial={{
+                    opacity:0,
+                    y: 50,
+                }}
+                whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition:{
+                        duration: 1,
+                        delay: 0.6
+                    }
+                }}
+            className="text-6xl md:text-8xl mb-8 md:mb-2 font-bold text-[#FFFFF0]">Tech Stack</motion.h2>
+            <motion.div 
+                     initial={{
+                        opacity:0,
+                        y: 50,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition:{
+                            duration: 1.2,
+                            delay: 0.6
+                        }
+                    }}
+            className="flex flex-row w-full gap-2 md:gap-6 mb-2 md:mb-10">
                 <button onClick={handleAllBtnClicked}  className={`w-32 focus:bg-[#B2FFB1] 
                 focus:text-black h-fit border-2 py-1
                 rounded-md border-white text-black
-                hover:bg-[#B2FFB1] hover:text-black ${allBtnClicked ? 'bg-[#B2FFB1]' : ''} ${allBtnClicked ? 'text-black' : 'text-white'}`}>All</button>
+                hover:bg-[#B2FFB1] hover:text-black ${allBtnClicked ? 'bg-[#B2FFB1]' : ''} 
+                ${allBtnClicked ? 'text-black' : 'text-white'}`}>All</button>
                 <button onClick={handleWorkingBtnClicked} 
                  className={`w-32 focus:bg-[#B2FFB1] 
                  focus:text-black h-fit border-2 py-1
                  rounded-md border-white text-black
-                 hover:bg-[#B2FFB1] hover:text-black ${workingBtnClicked ? 'bg-[#B2FFB1]' : ''} ${workingBtnClicked ? 'text-black' : 'text-white'}`}>Working</button>
+                 hover:bg-[#B2FFB1] hover:text-black ${workingBtnClicked ? 'bg-[#B2FFB1]' : ''} 
+                 ${workingBtnClicked ? 'text-black' : 'text-white'}`}>Working</button>
                 <button onClick={handleExposedBtnClicked} className={`w-32 focus:bg-[#B2FFB1] 
                 focus:text-black h-fit border-2 py-1
                 rounded-md border-white text-black
-                hover:bg-[#B2FFB1] hover:text-black ${exposedBtnClicked ? 'bg-[#B2FFB1]' : ''} ${exposedBtnClicked ? 'text-black' : 'text-white'}`}>Exposed To</button>
-            </div>
+                hover:bg-[#B2FFB1] hover:text-black ${exposedBtnClicked ? 'bg-[#B2FFB1]' : ''} 
+                ${exposedBtnClicked ? 'text-black' : 'text-white'}`}>Exposed To</button>
+            </motion.div>
         </div>
   
-        <div className='h-[80%]'>
-            {workingBtnClicked && <div className='flex flex-row gap-10 md:gap-20 w-full flex-wrap'>
+        <motion.div 
+              initial={{
+                opacity:0,
+                y: 50,
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0,
+                transition:{
+                    duration: 1.2,
+                    delay: 0.6
+                }
+            }}
+        
+        className='h-[80%]'>
+            {workingBtnClicked && <div className='flex flex-row gap-8 md:gap-20 w-full flex-wrap'>
                 <img className='w-12 md:w-20' src={JavaScript} alt="javascript" />
                 <img className='w-12 md:w-20' src={Html} alt="html" />
                 <img className='w-12 md:w-20' src={Css} alt="css" />
@@ -79,7 +136,8 @@ export const SkillsSection = (props) => {
                 <img className='w-12 md:w-20' src={PostgreSQL} alt="postgresql" />
             </div>}
 
-            {exposedBtnClicked && <div className='flex flex-row gap-10 md:gap-20 w-full flex-wrap'>
+            {exposedBtnClicked && 
+            <div className='flex flex-row gap-8 md:gap-20 w-full flex-wrap'>
                 <img className='w-12 md:w-20' src={Aws} alt="aws" />
                 <img className='w-12 md:w-20' src={Sass} alt="sass" />
                 <img className='w-12 md:w-20' src={Threejs} alt="threejs" />
@@ -89,7 +147,7 @@ export const SkillsSection = (props) => {
                 <img className='w-12 md:w-20' src={Figma} alt="figma" />
             </div>}
 
-            {allBtnClicked && <div className='flex flex-row gap-10 md:gap-20 w-full flex-wrap'>
+            {allBtnClicked && <div className='flex flex-row gap-8 md:gap-20 w-full flex-wrap'>
                 <img className='w-12 md:w-20' src={JavaScript} alt="javascript" />
                 <img className='w-12 md:w-20' src={Python} alt="python" />
                 <img className='w-12 md:w-20' src={Html} alt="html" />
@@ -109,9 +167,9 @@ export const SkillsSection = (props) => {
                 <img className='w-12 md:w-20' src={Figma} alt="figma" />
             </div>}
 
-        </div>
+        </motion.div>
       
-    </article>
+    </motion.article>
     </Section>
     )
 }

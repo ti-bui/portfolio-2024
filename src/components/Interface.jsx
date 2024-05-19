@@ -7,13 +7,13 @@ import {ContactSection} from './ContactSection'
 
 
 const Section = (props) => {
-    const {children} = props;
+    const {children, setSection} = props;
 
     return (
     <motion.section 
     className={`
-    h-screen w-screen p-8 max-w-screen-2xl mx-auto flex flex-col
-    items-start justify-center
+    h-screen w-screen p-10 md:p-20 mx-auto flex flex-col
+     justify-center
     `}
     initial={{
         opacity:0,
@@ -33,12 +33,13 @@ const Section = (props) => {
 }
 
 
-const Interface = () => {
+const Interface = (props) => {
+    const {setSection} = props
   return (
  
-            <div className="flex flex-col items-center w-screen">
+            <div className="flex flex-col items-center w-screen max-w-2xl">
             <GreetingSection Section={Section}/>
-            <AboutSection Section={Section}/>
+            <AboutSection setSection={setSection} Section={Section}/>
             <SkillsSection  Section={Section}/>
             <ProjectsSection Section={Section}/>
             <ContactSection Section={Section}/>

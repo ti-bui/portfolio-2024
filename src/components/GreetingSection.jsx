@@ -15,12 +15,12 @@ export const GreetingSection = (props) => {
             opacity: 1,
             y: 0,
             transition:{
-                duration: 2,
+                duration: 1,
                 delay: 0.6
             }
         }}
         >
-            <div className='flex flex-col'>
+            <div className='flex flex-col w-fit h-fit '>
                 <h1 className="md:text-9xl sm:text-6xl 
                 font-bold text-[#FFFFF0]">Hi, I'm Ti
                 </h1>

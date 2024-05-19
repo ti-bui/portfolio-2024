@@ -1,25 +1,93 @@
-
+import {motion} from 'framer-motion'
 
 export const AboutSection = (props) => {
-    const {Section} = props
+    const {Section, setSection} = props
     
     return (
     <Section>
-        <div className="flex flex-col gap-10">
-            <h2 className="text-6xl md:text-8xl font-bold text-[#FFFFF0]">About Me
-            </h2>
-            <h3 className="text-2xl md:text-4xl font-bold text-[#e1f944]">an ENGINEER with a 
+        <motion.div
+              initial={{
+                opacity:0,
+                y: 50,
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0,
+                transition:{
+                    duration: 0.5,
+                    delay: 0.6
+                }
+            }}
+        className="flex flex-col md:gap-10 gap-6 ">
+            <motion.h2 
+                   initial={{
+                    opacity:0,
+                    y:50
+                }}
+                whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition:{
+                        duration: 1,
+                        delay: 0.6
+                    }
+                }}
+            
+            className="text-6xl md:text-8xl font-bold text-[#FFFFF0]">About Me
+            </motion.h2>
+            <motion.h3 
+                    initial={{
+                        opacity:0,
+                        y:50
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition:{
+                            duration: 1.1,
+                            delay: 0.6
+                        }
+                    }}
+            className="text-2xl md:text-4xl font-bold text-[#f1ff97]">an ENGINEER with a 
             <br/>
-            background in PHOTOGRAPHY</h3>
-            <p className="text-[#FFFFF0] text-lg ">
-                Lorem Ipsum is simply dummy text of the printing and typesetting 
-                <br/>
-            industry. Lorem Ipsum has been the industry's standard dummy text ever 
-            <br/>
-            since the 1500s, when an unknown printer took a galley of type and 
-            <br/>
-            scrambled it to make a type speci</p>
-        </div>
+            background in PHOTOGRAPHY</motion.h3>
+            <div className="flex gap-10 box-shadow">
+            <h3 className="text-[#FFFFF0] text-xl font-bold">
+                🇻🇳 
+            Vietnamese</h3> 
+            <h3 className="text-[#FFFFF0] text-xl font-bold">
+            🇨🇦
+            English</h3> 
+            <h3 className="text-[#FFFFF0] text-xl font-bold">
+            🇨🇦
+            French</h3> 
+            </div>
+            <motion.div 
+                    initial={{
+                        opacity:0,
+                        y:50
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition:{
+                            duration: 1.2,
+                            delay: 0.6
+                        }
+                    }}
+            className="w-full md:w-[45%]">
+                <p className="text-[#ffffff] text-xl leading-relaxed">
+                With 3 years of experience in the art industry, I've built a strong 
+                foundation in visual design. Transitioning into tech, I'm grateful to 
+                leverage this experience, developing into an engineer proficient not 
+                only in coding but also in design thinking for UX/UI enhancement.
+                    </p>
+            </motion.div>
+            <button 
+            onClick={() => {setSection(4)}}
+            className="w-24 h-fit bg-violet-300 hover:bg-violet-100
+            text-base font-bold text-black py-3 rounded-md">Contact</button>
+        </motion.div>
      
     </Section>
     )
