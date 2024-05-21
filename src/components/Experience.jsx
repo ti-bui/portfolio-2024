@@ -1,26 +1,22 @@
-
 import { Avatar } from './Avatar';
-
 import {motion} from 'framer-motion-3d'
 import { useFrame, useThree } from "@react-three/fiber";
-// import { framerMotionConfig } from "../config";
-import { animate, useMotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Float, MeshDistortMaterial, useScroll } from '@react-three/drei';
 import { Background } from './Background';
 
-
-export const Experience = (props) => {
+export const Experience = () => {
   const [section, setSection] = useState(0)
   const { viewport } = useThree();
   const data = useScroll()
-
-
   const [characterAnimation, setCharacterAnimation] = useState('Breakdance')
 
   useEffect(() => {
   
     section === 0 ? setCharacterAnimation('Breakdance'): setCharacterAnimation('Falling')
+
+    if(section === 2){setCharacterAnimation('Pose')}
+
 
   },[section])
 
@@ -57,6 +53,13 @@ export const Experience = (props) => {
             scaleX: 2,
             scaleY: 2,
             scaleZ: 2,
+          },
+          2:{
+            y: -viewport.height*2 -1.4,
+            x: 2.5,
+            scaleX: 1.5,
+            scaleY: 1.5,
+            scaleZ: 1.5,
           }
         }}
         >

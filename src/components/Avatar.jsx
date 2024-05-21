@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useFBX, useAnimations } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+
 
 
 export function Avatar(props) {
@@ -9,18 +9,16 @@ const {animation} = props
   const group = useRef()
   const { nodes, materials } = useGLTF('models/rpm-avatar.glb')
   const {animations: breakdanceAnimation} = useFBX("animations/breakdance.fbx")
-  const {animations: standingAnimation} = useFBX("animations/Standing-Idle.fbx")
   const {animations: fallingAnimation} = useFBX("animations/Falling-Idle.fbx")
   const {animations: poseAnimation} = useFBX("animations/pose.fbx")
-
+  
 
   breakdanceAnimation[0].name = "Breakdance"
-  standingAnimation[0].name = "Standing"
   fallingAnimation[0].name = "Falling"
   poseAnimation[0].name = "Pose"
 
  const {actions} = useAnimations(
-    [ breakdanceAnimation[0] , standingAnimation[0], fallingAnimation[0]],
+    [ breakdanceAnimation[0], fallingAnimation[0], poseAnimation[0]], 
     group)
 
   useEffect(() => {

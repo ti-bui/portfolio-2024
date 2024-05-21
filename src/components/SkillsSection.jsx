@@ -1,27 +1,11 @@
-import JavaScript from '../assets/icons/javascript.svg'
-import Python from '../assets/icons/python.svg'
-import Html from '../assets/icons/html.svg'
-import Nodejs from '../assets/icons/nodejs.svg'
-import Css from '../assets/icons/css.svg'
-import Typescript from '../assets/icons/typescript.svg'
-import Tailwindcss from '../assets/icons/tailwind-css.svg'
-import Reactjs from '../assets/icons/react-js.svg'
-import Nextjs from '../assets/icons/nextjs.svg'
-import Aws from '../assets/icons/aws.svg'
-import PostgreSQL from '../assets/icons/postgresql.svg'
-import Sass from '../assets/icons/sass.svg'
-import Threejs from '../assets/icons/threejs.svg'
-import Gsap from '../assets/icons/gsap.svg'
-import FramerMotion from '../assets/icons/framer-motion.svg'
-import Blender from '../assets/icons/blender.svg'
-import Figma from '../assets/icons/figma.svg'
+import {skills} from './Data'
 import {motion} from 'framer-motion'
 import { useState } from 'react'
 
 export const SkillsSection = (props) => {
-    const [workingBtnClicked, setWorkingBtnClicked] = useState(false)
+    const [workingBtnClicked, setWorkingBtnClicked] = useState(true)
     const [exposedBtnClicked, setExposedBtnClicked] = useState(false)
-    const [allBtnClicked, setAllBtnClicked] = useState(true)
+    const [allBtnClicked, setAllBtnClicked] = useState(false)
     
     const {Section} = props
 
@@ -43,6 +27,7 @@ export const SkillsSection = (props) => {
         setAllBtnClicked(true)
 }
 
+
     
     return (
     <Section>
@@ -59,36 +44,12 @@ export const SkillsSection = (props) => {
             delay: 0.6
         }
     }}
-    className='flex flex-col w-full lg:w-[80%] gap-12 h-full mt-24 justify-center'>
+    className='flex flex-col w-full lg:w-[60%] gap-12 h-full mt-24 justify-center'>
         <div className='flex flex-col h-[20%]'>
-            <motion.h2 
-                initial={{
-                    opacity:0,
-                    y: 50,
-                }}
-                whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    transition:{
-                        duration: 1,
-                        delay: 0.6
-                    }
-                }}
-            className="text-6xl md:text-8xl mb-8 md:mb-2 font-bold text-[#FFFFF0]">Tech Stack</motion.h2>
-            <motion.div 
-                     initial={{
-                        opacity:0,
-                        y: 50,
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                        transition:{
-                            duration: 1.2,
-                            delay: 0.6
-                        }
-                    }}
-            className="flex flex-row w-full gap-2 md:gap-6 mb-2 md:mb-10">
+            <h2 
+            className="text-6xl md:text-8xl mb-8 md:mb-2 font-bold text-[#FFFFF0]">Tech Stack</h2>
+            <div        
+            className="flex flex-row w-full gap-2 md:gap-6 mb-2 md:mb-6">
                 <button onClick={handleAllBtnClicked}  className={`w-32 focus:bg-[#B2FFB1] 
                 focus:text-black h-fit border-2 py-1
                 rounded-md border-white text-black
@@ -105,69 +66,43 @@ export const SkillsSection = (props) => {
                 rounded-md border-white text-black
                 hover:bg-[#B2FFB1] hover:text-black ${exposedBtnClicked ? 'bg-[#B2FFB1]' : ''} 
                 ${exposedBtnClicked ? 'text-black' : 'text-white'}`}>Exposed To</button>
-            </motion.div>
+            </div>
         </div>
   
-        <motion.div 
-              initial={{
-                opacity:0,
-                y: 50,
-            }}
-            whileInView={{
-                opacity: 1,
-                y: 0,
-                transition:{
-                    duration: 1.2,
-                    delay: 0.6
-                }
-            }}
-        
-        className='h-[80%]'>
-            {workingBtnClicked && <div className='flex flex-row gap-8 md:gap-20 w-full flex-wrap'>
-                <img className='w-12 md:w-20' src={JavaScript} alt="javascript" />
-                <img className='w-12 md:w-20' src={Html} alt="html" />
-                <img className='w-12 md:w-20' src={Css} alt="css" />
-                <img className='w-12 md:w-20' src={Python} alt="python" />
-                <img className='w-12 md:w-20' src={Nextjs} alt="nextjs" />
-                <img className='w-12 md:w-20' src={Reactjs} alt="reactjs" />
-                <img className='w-12 md:w-20' src={Nodejs} alt="nodejs" />
-                <img className='w-12 md:w-20' src={Tailwindcss} alt="tailwindcss" />
-                <img className='w-12 md:w-20' src={Typescript} alt="typescript" />
-                <img className='w-12 md:w-20' src={PostgreSQL} alt="postgresql" />
+        <div 
+            className='h-[80%]'>
+            {workingBtnClicked && 
+            <div className='flex flex-row gap-8 md:gap-10 w-full flex-wrap'>
+               {skills.filter(skill => skill.isWorking).map((skill, index) => 
+                (
+                <div className='flex flex-col items-center justify-center gap-2' key={index} >
+                            <img className='w-12 md:w-20' src={skill.logo} alt="skills logo" />
+                            <p className='text-stone-200 text-sm'>{skill.name}</p>
+                    </div>
+                ))}
             </div>}
 
             {exposedBtnClicked && 
-            <div className='flex flex-row gap-8 md:gap-20 w-full flex-wrap'>
-                <img className='w-12 md:w-20' src={Aws} alt="aws" />
-                <img className='w-12 md:w-20' src={Sass} alt="sass" />
-                <img className='w-12 md:w-20' src={Threejs} alt="threejs" />
-                <img className='w-12 md:w-20' src={FramerMotion} alt="framer-motion" />
-                <img className='w-12 md:w-20' src={Gsap} alt="gsap" />
-                <img className='w-12 md:w-20' src={Blender} alt="blender" />
-                <img className='w-12 md:w-20' src={Figma} alt="figma" />
+            <div className='flex flex-row gap-8 md:gap-10 w-full flex-wrap'>
+                  {skills.filter(skill => !skill.isWorking).map((skill, index) => 
+                (
+                <div className='flex flex-col items-center justify-center gap-2' key={index} >
+                        <img className='w-12 md:w-20' src={skill.logo} alt="skills logo" />
+                        <p className='text-stone-200 text-sm'>{skill.name}</p>
+                </div>
+                ))}
             </div>}
 
-            {allBtnClicked && <div className='flex flex-row gap-8 md:gap-20 w-full flex-wrap'>
-                <img className='w-12 md:w-20' src={JavaScript} alt="javascript" />
-                <img className='w-12 md:w-20' src={Python} alt="python" />
-                <img className='w-12 md:w-20' src={Html} alt="html" />
-                <img className='w-12 md:w-20' src={Nodejs} alt="nodejs" />
-                <img className='w-12 md:w-20' src={Css} alt="css" />
-                <img className='w-12 md:w-20' src={Sass} alt="sass" />
-                <img className='w-12 md:w-20' src={Threejs} alt="threejs" />
-                <img className='w-12 md:w-20' src={FramerMotion} alt="framer-motion" />
-                <img className='w-12 md:w-20' src={Gsap} alt="gsap" />
-                <img className='w-12 md:w-20' src={Typescript} alt="typescript" />
-                <img className='w-12 md:w-20' src={Tailwindcss} alt="tailwindcss" />
-                <img className='w-12 md:w-20' src={Nextjs} alt="nextjs" />
-                <img className='w-12 md:w-20' src={Reactjs} alt="reactjs" />
-                <img className='w-12 md:w-20' src={Aws} alt="aws" />
-                <img className='w-12 md:w-20' src={PostgreSQL} alt="postgresql" />
-                <img className='w-12 md:w-20' src={Blender} alt="blender" />
-                <img className='w-12 md:w-20' src={Figma} alt="figma" />
+            {allBtnClicked && <div className='flex flex-row gap-8 md:gap-10 w-full flex-wrap'>
+                {skills.map((skill, index) => (
+                    <div className='flex flex-col items-center justify-center gap-2' key={index} >
+                            <img className='w-12 md:w-20' src={skill.logo} alt="skills logo" />
+                            <p className='text-stone-200 text-sm'>{skill.name}</p>
+                    </div>
+                ))}
             </div>}
 
-        </motion.div>
+        </div>
       
     </motion.article>
     </Section>

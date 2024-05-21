@@ -7,7 +7,7 @@ export const ContactSection = (props) => {
     const {Section} = props
     return (
     <Section >
-        <div className='flex flex-col h-full w-full justify-end md:justify-center'>
+        <div className='flex flex-col h-full w-full mb-32 md:mb-0 justify-end md:justify-center'>
                 <h2 className="sm:text-6xl md:text-8xl mb-10 font-bold  text-black">Let's Connect</h2>
                 <div className="flex flex-row w-full gap-10 md:gap-28">
                     <div className='hover:bg-[#B2FFB1] transition 
