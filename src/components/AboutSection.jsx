@@ -48,9 +48,9 @@ export const AboutSection = (props) => {
                             delay: 0.6
                         }
                     }}
-            className="text-2xl md:text-4xl font-bold text-[#f1ff97]">an ENGINEER with a 
+            className="text-2xl md:text-4xl text-[#fffff0] font-bold ">An <span className='text-[#f1ff97] underline'>ENGINEER</span> with a 
             <br/>
-            background in PHOTOGRAPHY</motion.h3>
+            background in <span className='text-[#f1ff97] underline'>PHOTOGRAPHY</span></motion.h3>
             <motion.div 
                     initial={{
                         opacity:0,

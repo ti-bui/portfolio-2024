@@ -26,9 +26,7 @@ export const SkillsSection = (props) => {
         setWorkingBtnClicked(false)
         setAllBtnClicked(true)
 }
-
-
-    
+ 
     return (
     <Section>
     <motion.article
@@ -72,7 +70,7 @@ export const SkillsSection = (props) => {
         <div 
             className='h-[80%]'>
             {workingBtnClicked && 
-            <div className='flex flex-row gap-8 md:gap-10 w-full flex-wrap'>
+            <div className='flex flex-row gap-8 md:gap-10 w-full flex-wrap justify-left'>
                {skills.filter(skill => skill.isWorking).map((skill, index) => 
                 (
                 <div className='flex flex-col items-center justify-center gap-2' key={index} >
@@ -83,7 +81,7 @@ export const SkillsSection = (props) => {
             </div>}
 
             {exposedBtnClicked && 
-            <div className='flex flex-row gap-8 md:gap-10 w-full flex-wrap'>
+            <div className='flex flex-row gap-8 md:gap-10 w-full flex-wrap justify-left'>
                   {skills.filter(skill => !skill.isWorking).map((skill, index) => 
                 (
                 <div className='flex flex-col items-center justify-center gap-2' key={index} >
@@ -93,7 +91,7 @@ export const SkillsSection = (props) => {
                 ))}
             </div>}
 
-            {allBtnClicked && <div className='flex flex-row gap-8 md:gap-10 w-full flex-wrap'>
+            {allBtnClicked && <div className='flex flex-row gap-8 md:gap-10 w-full flex-wrap justify-left'>
                 {skills.map((skill, index) => (
                     <div className='flex flex-col items-center justify-center gap-2' key={index} >
                             <img className='w-12 md:w-20' src={skill.logo} alt="skills logo" />

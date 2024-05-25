@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useFBX, useAnimations } from '@react-three/drei'
 
-
-
 export function Avatar(props) {
 const {animation} = props 
 
@@ -27,7 +25,6 @@ const {animation} = props
       actions[animation].reset().stop();
     };
   },[actions]);
-
 
 
   return (

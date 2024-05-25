@@ -21,13 +21,12 @@ export const GreetingSection = (props) => {
         }}
         >
             <div className='flex flex-col w-fit h-fit '>
-                <h1 className="md:text-9xl sm:text-6xl 
-                font-bold text-[#FFFFF0]">Hi, I'm Ti
-                </h1>
-                <h1 className='md:text-9xl sm:text-6xl 
-                font-bold text-[#FFFFF0] sm:mt-10'>Full Stack Engineer</h1>
+                <h3 className="md:text-7xl sm:text-4xl 
+                font-bold underline text-[#f4f294]">Hi, I'm Ti
+                </h3>
+                    <h1 className='md:text-9xl sm:text-6xl 
+                    font-bold  text-[#fffced] sm:mt-10'>Full Stack Engineer</h1>
             </div>
-
         </motion.div>
     </Section>
     )

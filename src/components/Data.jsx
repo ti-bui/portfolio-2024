@@ -17,6 +17,7 @@ import Gsap from '../assets/icons/gsap.svg'
 import FramerMotion from '../assets/icons/framer-motion.svg'
 import Blender from '../assets/icons/blender.svg'
 import Figma from '../assets/icons/figma.svg'
+import DanceRobo from '../assets/images/dance-robo.png'
 
 export const projects =[
     {
@@ -37,6 +38,15 @@ export const projects =[
         description: "My portfolio showcases my developer skills. I aim to implement 3D elements and smooth scrolling to enhance the UX and make the website more fun and interactive.",
         url: "https://www.tibui.dev/",
         github: "https://github.com/ti-bui/portfolio-2024"
+    },
+    {
+        title: "Dance Robot",
+        project_type: "3D Code",
+        thumbnail: DanceRobo,
+        tech_stack: "ThreeJS, Vite, JavaScript",
+        description: "A Threejs experiment for my 3D learning",
+        url: "https://dance-robo.vercel.app/",
+        github: "https://github.com/ti-bui/dance-robo"
     }
 ]
 
